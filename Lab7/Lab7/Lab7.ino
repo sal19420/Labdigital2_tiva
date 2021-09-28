@@ -24,12 +24,12 @@ void setup()
   pinMode(PA_3, OUTPUT);
 
   if (!SD.begin(PA_3)) {
-    Serial.println("initialization failed!");
+    Serial.println("Falló");
     return;
   }
-  Serial.println("initialization done.");
+  Serial.println("Se acabó la inicializacion");
 
-  Serial.println("done!");
+  Serial.println("Listo");
 }
 
 void loop()
@@ -64,15 +64,15 @@ void readText(char dir) {
   File archivo;
   switch (dir) {//Se abre el archivo dependiendo del valor que tenga la variable opcion 
     case '1':
-      archivo = SD.open("ghost.txt");
+      archivo = SD.open("mario.txt");
       seleccion = 1; //habilita la rutina de mostrar el contenido
       break;
     case '2':
-      archivo = SD.open("pacman.txt");
+      archivo = SD.open("toad.txt");
       seleccion = 1;
       break;
     case '3':
-      archivo = SD.open("spider.txt");
+      archivo = SD.open("ironman.txt");
       seleccion = 1;
       break;
     default:
@@ -91,7 +91,7 @@ void readText(char dir) {
       archivo.close();
     } else {
       // if the file didn't open, print an error:
-      Serial.println("error opening test.txt");
+      Serial.println("Error");
     }
   }
 }
